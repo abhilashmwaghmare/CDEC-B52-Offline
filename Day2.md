@@ -1,4 +1,4 @@
-# 📚 Day 2 - Interactive Learning Guide
+# 📚 Day 2 
 ## Linux, AWS Cloud Computing & DevOps Careers
 
 ---

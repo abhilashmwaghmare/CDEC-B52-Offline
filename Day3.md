@@ -1,4 +1,4 @@
-# 📚 Day 3 - Interactive Learning Guide
+# 📚 Day 3 
 ## Operating Systems & Linux Fundamentals
 
 ---

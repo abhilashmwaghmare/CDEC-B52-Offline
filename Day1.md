@@ -1,4 +1,4 @@
-# 📚 Day 1 - Interactive Learning Guide
+# 📚 Day 1 
 ## Introduction to DevOps & IT Fundamentals
 
 ---
