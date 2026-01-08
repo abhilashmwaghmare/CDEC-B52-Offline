@@ -63,20 +63,6 @@ GUI (Graphical User Interface)          Command Prompt
 
 When you open a terminal, you'll see a prompt that looks like this:
 
-```mermaid
-graph LR
-    A[USER<br/>abhilash] --> B[@]
-    B --> C[HOSTNAME<br/>ubuntu-server]
-    C --> D[:]
-    D --> E[CURRENT DIR<br/>/home/abhilash]
-    E --> F[$]
-    
-    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
-    style C fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
-    style E fill:#43e97b,stroke:#333,stroke-width:2px,color:#fff
-    style F fill:#f093fb,stroke:#333,stroke-width:2px,color:#fff
-```
-
 **Example:**
 ```
 abhilash@ubuntu-server:/home/abhilash$ 
