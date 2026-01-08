@@ -1,4 +1,4 @@
-# 📚 Day 6 - Interactive Learning Guide
+# 📚 Day 6
 ## Linux File System Hierarchy & Shortcuts
 
 ---
