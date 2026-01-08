@@ -1,4 +1,4 @@
-# 📚 Day 7 - Interactive Learning Guide
+# 📚 Day 7 
 ## Vim Editor: Master the Powerful Text Editor
 
 ---
