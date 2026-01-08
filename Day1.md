@@ -11,36 +11,36 @@
 
 ### DevOps Concept Diagram
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    DEVOPS CULTURE                      │
-│                                                         │
-│  ┌──────────────┐              ┌──────────────┐      │
-│  │ DEVELOPMENT │              │  OPERATIONS   │      │
-│  │             │              │               │      │
-│  │ • Coding    │◄────────────►│ • Deployment │      │
-│  │ • Testing   │  COLLABORATION│ • Monitoring │      │
-│  │ • Building  │              │ • Maintenance│      │
-│  └──────────────┘              └──────────────┘      │
-│                                                         │
-│              ┌──────────────────────┐                  │
-│              │   AUTOMATION        │                  │
-│              │   CI/CD Pipeline     │                  │
-│              └──────────────────────┘                  │
-└─────────────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    A[DEVELOPMENT<br/>• Coding<br/>• Testing<br/>• Building] <-->|COLLABORATION| B[OPERATIONS<br/>• Deployment<br/>• Monitoring<br/>• Maintenance]
+    C[AUTOMATION<br/>CI/CD Pipeline] --> A
+    C --> B
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#43e97b,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### DevOps Lifecycle
 
-```
-┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│   PLAN   │───►│   CODE   │───►│  BUILD   │───►│   TEST   │
-└──────────┘    └──────────┘    └──────────┘    └──────────┘
-     ▲                                                  │
-     │                                                  ▼
-┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│ MONITOR  │◄───│ DEPLOY   │◄───│ RELEASE  │◄───│ INTEGRATE│
-└──────────┘    └──────────┘    └──────────┘    └──────────┘
+```mermaid
+graph LR
+    A[PLAN] --> B[CODE]
+    B --> C[BUILD]
+    C --> D[TEST]
+    D --> E[INTEGRATE]
+    E --> F[RELEASE]
+    F --> G[DEPLOY]
+    G --> H[MONITOR]
+    H -->|Feedback Loop| A
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#f093fb,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#43e97b,stroke:#333,stroke-width:2px,color:#fff
+    style F fill:#fa709a,stroke:#333,stroke-width:2px,color:#fff
+    style G fill:#fee140,stroke:#333,stroke-width:2px,color:#000
+    style H fill:#30cfd0,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### Key Principles of DevOps
@@ -176,28 +176,19 @@ Developers + Operations ──► "Let's build it together!"
 
 ### IT Company Structure
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                  IT COMPANY ORGANIZATION                │
-└─────────────────────────────────────────────────────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        │                   │                   │
-        ▼                   ▼                   ▼
-┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│  MANAGEMENT  │    │  DEVELOPMENT │    │  OPERATIONS  │
-│              │    │              │    │              │
-│ • CEO        │    │ • Developers │    │ • DevOps     │
-│ • CTO        │    │ • QA/Testers │    │ • Sys Admins │
-│ • Managers   │    │ • Architects │    │ • SRE        │
-└──────────────┘    └──────────────┘    └──────────────┘
-        │                   │                   │
-        └───────────────────┼───────────────────┘
-                            │
-                    ┌───────▼───────┐
-                    │   PRODUCTS    │
-                    │   SERVICES    │
-                    └───────────────┘
+```mermaid
+graph TD
+    A[IT COMPANY] --> B[MANAGEMENT<br/>• CEO<br/>• CTO<br/>• Managers]
+    A --> C[DEVELOPMENT<br/>• Developers<br/>• QA/Testers<br/>• Architects]
+    A --> D[OPERATIONS<br/>• DevOps<br/>• Sys Admins<br/>• SRE]
+    B --> E[PRODUCTS<br/>& SERVICES]
+    C --> E
+    D --> E
+    style A fill:#667eea,stroke:#333,stroke-width:3px,color:#fff
+    style B fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#f093fb,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#43e97b,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### Departments in an IT Company
@@ -256,16 +247,24 @@ Developers + Operations ──► "Let's build it together!"
 
 ### Software Development Lifecycle (SDLC)
 
-```
-┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│REQUIREMENT│───►│  DESIGN  │───►│DEVELOPMENT│───►│ TESTING  │
-│ANALYSIS  │    │          │    │          │    │          │
-└──────────┘    └──────────┘    └──────────┘    └──────────┘
-     ▲                                                  │
-     │                                                  ▼
-┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│MAINTENANCE│◄───│DEPLOYMENT│◄───│  RELEASE │◄───│INTEGRATION│
-└──────────┘    └──────────┘    └──────────┘    └──────────┘
+```mermaid
+graph LR
+    A[REQUIREMENT<br/>ANALYSIS] --> B[DESIGN]
+    B --> C[DEVELOPMENT]
+    C --> D[TESTING]
+    D --> E[INTEGRATION]
+    E --> F[RELEASE]
+    F --> G[DEPLOYMENT]
+    G --> H[MAINTENANCE]
+    H -->|Feedback| A
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#f093fb,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#43e97b,stroke:#333,stroke-width:2px,color:#fff
+    style F fill:#fa709a,stroke:#333,stroke-width:2px,color:#fff
+    style G fill:#fee140,stroke:#333,stroke-width:2px,color:#000
+    style H fill:#30cfd0,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### Detailed SDLC Phases
@@ -406,22 +405,15 @@ An **Application** (or **App**) is a software program designed to perform specif
 
 ### Application Types
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    APPLICATION TYPES                     │
-└─────────────────────────────────────────────────────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        │                   │                   │
-        ▼                   ▼                   ▼
-┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│   DESKTOP    │    │    MOBILE    │    │     WEB      │
-│ APPLICATION  │    │ APPLICATION  │    │ APPLICATION  │
-│              │    │              │    │              │
-│ • Windows    │    │ • Android    │    │ • Browser    │
-│ • macOS      │    │ • iOS        │    │ • No install │
-│ • Linux      │    │ • Cross-platform│ │ • Accessible │
-└──────────────┘    └──────────────┘    └──────────────┘
+```mermaid
+graph TD
+    A[APPLICATION TYPES] --> B[DESKTOP<br/>• Windows<br/>• macOS<br/>• Linux]
+    A --> C[MOBILE<br/>• Android<br/>• iOS<br/>• Cross-platform]
+    A --> D[WEB<br/>• Browser-based<br/>• No install<br/>• Accessible]
+    style A fill:#667eea,stroke:#333,stroke-width:3px,color:#fff
+    style B fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#f093fb,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### Desktop Applications

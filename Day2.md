@@ -83,6 +83,33 @@
 
 ### Linux Feature Comparison
 
+```mermaid
+graph LR
+    A[Linux] --> A1[Free]
+    A --> A2[Open Source]
+    A --> A3[High Security]
+    A --> A4[Excellent Stability]
+    A --> A5[Full Customization]
+    A --> A6[Native Multi-User]
+    A --> A7[Dominant Server Use]
+    
+    B[Windows] --> B1[Paid]
+    B --> B2[Proprietary]
+    B --> B3[Moderate Security]
+    B --> B4[Good Stability]
+    B --> B5[Limited Customization]
+    
+    C[macOS] --> C1[Paid]
+    C --> C2[Proprietary]
+    C --> C3[High Security]
+    C --> C4[Excellent Stability]
+    C --> C5[Limited Customization]
+    
+    style A fill:#43e97b,stroke:#333,stroke-width:2px
+    style B fill:#0078d4,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#007aff,stroke:#333,stroke-width:2px,color:#fff
+```
+
 | Feature | Linux | Windows | macOS |
 |---------|-------|---------|-------|
 | **Cost** | Free | Paid | Paid |
@@ -339,29 +366,20 @@ Linux skills open doors to numerous high-paying career opportunities:
 
 ### Career Growth Path
 
-```
-Entry Level (0-2 years)
-    │
-    ▼
-Linux System Administrator
-    │
-    ▼
-Mid-Level (2-5 years)
-    │
-    ▼
-DevOps Engineer / Cloud Engineer
-    │
-    ▼
-Senior Level (5-8 years)
-    │
-    ▼
-Senior DevOps / SRE / Architect
-    │
-    ▼
-Leadership (8+ years)
-    │
-    ▼
-Engineering Manager / Principal Engineer
+```mermaid
+graph TD
+    A[Entry Level<br/>0-2 years<br/>$70K-$95K] --> B[Linux System<br/>Administrator]
+    B --> C[Mid-Level<br/>2-5 years<br/>$100K-$140K]
+    C --> D[DevOps Engineer<br/>Cloud Engineer]
+    D --> E[Senior Level<br/>5-8 years<br/>$130K-$170K]
+    E --> F[Senior DevOps<br/>SRE / Architect]
+    F --> G[Leadership<br/>8+ years<br/>$160K-$250K]
+    G --> H[Engineering Manager<br/>Principal Engineer]
+    
+    style A fill:#43e97b,stroke:#333,stroke-width:2px
+    style C fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style G fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ---
@@ -478,34 +496,22 @@ AWS offers services across multiple categories to meet various business needs:
 
 ### AWS Service Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    AWS SERVICES                         │
-└─────────────────────────────────────────────────────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        │                   │                   │
-        ▼                   ▼                   ▼
-┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│  COMPUTE     │    │  STORAGE     │    │  DATABASE    │
-│              │    │              │    │              │
-│ • EC2        │    │ • S3         │    │ • RDS        │
-│ • Lambda     │    │ • EBS        │    │ • DynamoDB   │
-│ • ECS/EKS    │    │ • EFS        │    │ • Redshift   │
-└──────────────┘    └──────────────┘    └──────────────┘
-        │                   │                   │
-        └───────────────────┼───────────────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        │                   │                   │
-        ▼                   ▼                   ▼
-┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│ NETWORKING   │    │  SECURITY    │    │  AI/ML        │
-│              │    │              │    │              │
-│ • VPC        │    │ • IAM        │    │ • SageMaker   │
-│ • CloudFront │    │ • WAF         │    │ • Rekognition │
-│ • Route 53   │    │ • Shield      │    │ • Comprehend  │
-└──────────────┘    └──────────────┘    └──────────────┘
+```mermaid
+graph TD
+    A[AWS SERVICES] --> B[COMPUTE<br/>• EC2<br/>• Lambda<br/>• ECS/EKS]
+    A --> C[STORAGE<br/>• S3<br/>• EBS<br/>• EFS]
+    A --> D[DATABASE<br/>• RDS<br/>• DynamoDB<br/>• Redshift]
+    A --> E[NETWORKING<br/>• VPC<br/>• CloudFront<br/>• Route 53]
+    A --> F[SECURITY<br/>• IAM<br/>• WAF<br/>• Shield]
+    A --> G[AI/ML<br/>• SageMaker<br/>• Rekognition<br/>• Comprehend]
+    
+    style A fill:#ff9900,stroke:#333,stroke-width:3px,color:#fff
+    style B fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#f093fb,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff
+    style F fill:#43e97b,stroke:#333,stroke-width:2px,color:#fff
+    style G fill:#fa709a,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### Core AWS Services

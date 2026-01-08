@@ -11,29 +11,14 @@ An **Operating System (OS)** is the most important software that runs on a compu
 
 ### System Architecture Diagram
 
-```
-┌─────────────────────────────────┐
-│           USER                  │
-│    (Applications & Commands)    │
-└──────────────┬──────────────────┘
-               │
-               ▼
-┌─────────────────────────────────┐
-│     OPERATING SYSTEM            │
-│  (Resource Manager & Interface) │
-│                                 │
-│  • Process Management           │
-│  • Memory Management            │
-│  • File System                  │
-│  • Device Management            │
-│  • Security                     │
-└──────────────┬──────────────────┘
-               │
-               ▼
-┌─────────────────────────────────┐
-│         HARDWARE                │
-│  (CPU, RAM, Storage, Devices)   │
-└─────────────────────────────────┘
+```mermaid
+graph TD
+    A[USER<br/>Applications & Commands] --> B[OPERATING SYSTEM<br/>Resource Manager & Interface<br/>• Process Management<br/>• Memory Management<br/>• File System<br/>• Device Management<br/>• Security]
+    B --> C[HARDWARE<br/>CPU, RAM, Storage, Devices]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#43e97b,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### Key Functions of an Operating System
@@ -914,36 +899,18 @@ Linux follows a **layered architecture model**, with each layer having specific 
 
 ### Architecture Layers
 
-```
-┌─────────────────────────────────────────────────────┐
-│            👤 USER APPLICATIONS                     │
-│  Web browsers, office suites, games, dev tools      │
-└──────────────────────┬──────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────┐
-│      🛠️ SYSTEM LIBRARIES & APIs                    │
-│      glibc, system calls, POSIX APIs               │
-└──────────────────────┬──────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────┐
-│              ⚙️ KERNEL                              │
-│  Core of Linux - manages hardware, processes,       │
-│  memory, filesystem                                 │
-└──────────────────────┬──────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────┐
-│    🔧 HARDWARE ABSTRACTION LAYER (HAL)              │
-│    Device drivers, hardware interfaces              │
-└──────────────────────┬──────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────┐
-│              💻 HARDWARE                             │
-│  CPU, RAM, Storage, Network, Peripherals            │
-└─────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    A[USER APPLICATIONS<br/>Web browsers, office suites,<br/>games, dev tools] --> B[SYSTEM LIBRARIES & APIs<br/>glibc, system calls,<br/>POSIX APIs]
+    B --> C[KERNEL<br/>Core of Linux<br/>• Manages hardware<br/>• Processes<br/>• Memory<br/>• Filesystem]
+    C --> D[HARDWARE ABSTRACTION LAYER<br/>Device drivers,<br/>hardware interfaces]
+    D --> E[HARDWARE<br/>CPU, RAM, Storage,<br/>Network, Peripherals]
+    
+    style A fill:#667eea,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#764ba2,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#f093fb,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#4facfe,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#43e97b,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### Detailed Architecture Diagram
