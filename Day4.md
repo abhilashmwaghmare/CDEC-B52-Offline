@@ -1,4 +1,4 @@
-# 📚 Day 4 - Interactive Learning Guide
+# 📚 Day 4
 ## Linux Command Prompt & Basic Commands
 
 ---

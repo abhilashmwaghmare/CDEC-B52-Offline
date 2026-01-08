@@ -1,4 +1,4 @@
-# 📚 Day 5 - Interactive Learning Guide
+# 📚 Day 5 
 ## File System Navigation & File Management
 
 ---
