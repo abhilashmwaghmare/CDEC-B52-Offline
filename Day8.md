@@ -248,24 +248,4 @@ Ctrl+w w
 
 ---
 
-## 🚀 Suggested Next Topics
 
-- Advanced macros & registers
-- Vim configuration (`.vimrc`)
-- Plugins & productivity setup
-- Diff mode & merge conflicts
-
----
-
-## 🤝 Contributing
-
-Add:
-- More labs
-- Advanced scenarios
-- Vim cheat sheets
-
----
-
-## 📄 License
-
-MIT License
