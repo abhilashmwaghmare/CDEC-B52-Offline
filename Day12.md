@@ -270,25 +270,5 @@ sudo -l
 
 ---
 
-## 🚀 Suggested Next Topics
 
-- umask and default permissions
-- ACL & extended attributes
-- Advanced sudo security
-- Audit logs & command tracking
-
----
-
-## 🤝 Contributing
-
-Add:
-- More labs
-- Troubleshooting cases
-- Advanced sudo rules
-
----
-
-## 📄 License
-
-MIT License
 
