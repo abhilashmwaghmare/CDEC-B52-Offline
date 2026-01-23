@@ -1,286 +1,342 @@
-# 👤 Linux User Management – Complete Guide (User, su, sudo & Permissions)
+[01_users_and_groups_readme.md](https://github.com/user-attachments/files/24819111/01_users_and_groups_readme.md)
+# 👤 Users & Groups in Linux 
 
-![Linux](https://img.shields.io/badge/Linux-Admin-blue)
-![DevOps](https://img.shields.io/badge/DevOps-Ready-green)
-![Interview](https://img.shields.io/badge/Interview-Preparation-orange)
+## 1️⃣ Introduction to Users in Linux
 
-> A production-ready, interview-focused guide to **Linux User Management** covering user creation, passwords, groups, home directories, configuration files, and switching users using `su` and `sudo`.
+In Linux, **every person who logs in is a user**.
 
----
+Think of Linux like a hostel:
+- Each student = one user  
+- Each room = user home directory  
+- Warden = root user  
 
-## 📌 Table of Contents
-
-1. [Overview of User and Permission Management](#overview-of-user-and-permission-management)
-2. [Types of Users](#types-of-users)
-3. [Using `useradd` Command](#using-useradd-command)
-4. [Setting User Passwords](#setting-user-passwords)
-5. [Managing User Groups](#managing-user-groups)
-6. [Removing Users](#removing-users)
-7. [Introduction to Affected Files](#introduction-to-affected-files)
-8. [User Home Directories](#user-home-directories)
-9. [Configuration Files](#configuration-files)
-10. [Switching Between Users](#switching-between-users)
-11. [Using `su` Command](#using-su-command)
-12. [Using `sudo` Command](#using-sudo-command)
-13. [Hands-on Labs](#hands-on-labs)
-14. [Interview Practice Questions](#interview-practice-questions)
-15. [Quick Revision Cheat Sheet](#quick-revision-cheat-sheet)
+Linux does not allow anonymous work. **Every action is done by some user.**
 
 ---
 
-## 🧭 Overview of User and Permission Management
+## 2️⃣ Why User Management is Important
 
-Linux is a **multi-user operating system**. User management ensures:
-- Secure access control
-- Isolation between users
-- Auditing and accountability
+User management helps to:
 
-**Real-time Use Case:**
-On production servers, each engineer gets a personal account with controlled sudo access.
+- Control who can log in
+- Protect important files
+- Give limited access to users
+- Track who did what
 
----
-
-## 👥 Types of Users
-
-| Type | Description |
-|-----|-------------|
-| Root user | Superuser with UID 0 |
-| System users | Service accounts (nginx, mysql, docker) |
-| Normal users | Human login users |
-
-Check UID type:
-```bash
-id user1
-```
+Example:
+- Developer can access code folder
+- Tester cannot access production folder
 
 ---
 
-## ➕ Using `useradd` Command
+## 3️⃣ Types of Users
 
-### Basic User Creation
+There are **three main types of users**:
+
+### 1. Root User
+- Super admin of Linux
+- UID = 0
+- Full control over system
+
+Example:
 ```bash
-sudo useradd user1
+whoami
+# output: root
 ```
 
-### Create with Home Directory
+### 2. System Users
+- Created for system services
+- Example: sshd, apache, mysql
+- Usually UID < 1000
+
+### 3. Normal Users
+- Real human users
+- UID >= 1000
+- Limited permissions
+
+Check your UID:
 ```bash
-sudo useradd -m user1
-```
-
-### Create with Custom Shell
-```bash
-sudo useradd -s /bin/bash user1
-```
-
-### Create with UID and Group
-```bash
-sudo useradd -u 2001 -g devops user1
-```
-
-**Use Case:** Creating application users for running services.
-
----
-
-## 🔑 Setting User Passwords
-
-```bash
-sudo passwd user1
-```
-
-Force password change on first login:
-```bash
-sudo chage -d 0 user1
-```
-
-Lock / Unlock password:
-```bash
-sudo passwd -l user1
-sudo passwd -u user1
+id
 ```
 
 ---
 
-## 👨‍👩‍👧 Managing User Groups
+## 4️⃣ Understanding UID and GID
 
-### Add User to Group
+- UID = User ID  
+- GID = Group ID  
+
+Example:
 ```bash
-sudo usermod -aG docker user1
+id abhilash
+# uid=1001(abhilash) gid=1001(abhilash)
 ```
 
-### Change Primary Group
-```bash
-sudo usermod -g developers user1
-```
-
-### View Groups
-```bash
-groups user1
-id user1
-```
-
-**Use Case:** Grant docker access without root privileges.
+This means:
+- User name = abhilash
+- User ID = 1001
+- Primary group ID = 1001
 
 ---
 
-## ➖ Removing Users
+## 5️⃣ Important User Files
 
-### Delete User Only
-```bash
-sudo userdel user1
+### 📄 /etc/passwd
+Stores basic user information.
+
+Format:
+```
+username:x:UID:GID:comment:home:shell
 ```
 
-### Delete User with Home Directory
+Example:
 ```bash
-sudo userdel -r user1
+cat /etc/passwd | head -3
 ```
 
-**Use Case:** Cleanup resigned employee accounts.
+### 📄 /etc/shadow
+Stores **encrypted passwords**.
 
----
+Only root can read it.
 
-## 📂 Introduction to Affected Files
-
-| File | Purpose |
-|-----|--------|
-| /etc/passwd | User account info |
-| /etc/shadow | Encrypted passwords |
-| /etc/group | Group info |
-| /etc/gshadow | Group passwords |
-
-View safely:
+Example:
 ```bash
-sudo vipw
-sudo vigr
+sudo cat /etc/shadow
 ```
 
----
+### 📄 /etc/group
+Stores group information.
 
-## 🏠 User Home Directories
-
-Default location:
-```bash
-/home/username
+Format:
+```
+groupname:x:GID:members
 ```
 
-Create user with home:
+Example:
 ```bash
-sudo useradd -m user1
-```
-
-Change home directory:
-```bash
-sudo usermod -d /data/user1 -m user1
+cat /etc/group | head -3
 ```
 
 ---
 
-## ⚙️ Configuration Files
+## 6️⃣ Creating Users with useradd
 
-| File | Description |
-|-----|-------------|
-| /etc/login.defs | Default UID, password policy |
-| /etc/default/useradd | Default settings |
-| /etc/skel | Template for new home dirs |
+Create a new user:
+```bash
+sudo useradd john
+```
 
-**Use Case:** Enforcing default shell and directory structure.
+Create user with home directory:
+```bash
+sudo useradd -m john
+```
+
+Check user created:
+```bash
+id john
+```
 
 ---
 
-## 🔄 Switching Between Users
+## 7️⃣ Setting and Changing Passwords
 
-### Using `su` (Switch User)
+Set password for user:
 ```bash
-su - user1
+sudo passwd john
 ```
 
-Return to root:
+User changes own password:
+```bash
+passwd
+```
+
+Lock a user account:
+```bash
+sudo passwd -l john
+```
+
+Unlock a user account:
+```bash
+sudo passwd -u john
+```
+
+---
+
+## 8️⃣ User Home Directories
+
+Every user has a home directory:
+
+Example:
+- root → /root  
+- john → /home/john  
+
+Check:
+```bash
+ls /home
+```
+
+Files inside home belong to that user.
+
+---
+
+## 9️⃣ Managing User Groups
+
+A **group** is a collection of users.
+
+Why groups?
+- Share files
+- Give common permissions
+
+Create a group:
+```bash
+sudo groupadd devops
+```
+
+Check group:
+```bash
+grep devops /etc/group
+```
+
+---
+
+## 🔟 Adding and Removing Users from Groups
+
+Add user to group:
+```bash
+sudo usermod -aG devops john
+```
+
+Check groups of user:
+```bash
+groups john
+```
+
+Remove user from group:
+```bash
+sudo gpasswd -d john devops
+```
+
+---
+
+## 1️⃣1️⃣ Removing Users
+
+Delete user only:
+```bash
+sudo userdel john
+```
+
+Delete user with home directory:
+```bash
+sudo userdel -r john
+```
+
+---
+
+## 1️⃣2️⃣ Switching Between Users
+
+Switch to another user:
+```bash
+su - john
+```
+
+Go back:
 ```bash
 exit
 ```
 
 ---
 
-## 🔐 Using `su` Command
+## 1️⃣3️⃣ Using su Command
 
-| Command | Meaning |
-|--------|--------|
-| su | Switch to root |
-| su - user1 | Switch with environment |
-
-**Use Case:** Temporarily becoming another user for testing permissions.
-
----
-
-## 🛡 Using `sudo` Command
-
-### Run Command as Root
+Become root:
 ```bash
-sudo systemctl restart nginx
+su -
 ```
 
-### Switch to Root Shell
+This needs root password.
+
+---
+
+## 1️⃣4️⃣ Using sudo Command
+
+Run command as root:
 ```bash
-sudo -i
+sudo apt update
 ```
 
-### Edit sudoers Safely
+Check sudo access:
 ```bash
-sudo visudo
+sudo -l
 ```
 
-Example sudo rule:
-```text
-user1 ALL=(ALL) NOPASSWD: /bin/systemctl
-```
-
-**Use Case:** Grant limited admin rights without sharing root password.
+Why sudo is better than root login?
+- Safer
+- Logged actions
+- Limited access
 
 ---
 
-## 🧪 Hands-on Labs
+## 🧪 15️⃣ Hands-on Labs
 
-### Lab 1: User Lifecycle
-1. Create user `dev1` with home directory
-2. Set password and force change on login
-3. Add to `developers` group
-4. Lock the account
-5. Delete user with home
+### Lab 1: Create a User
+1. Create user `student1`
+2. Set password
+3. Check UID
 
----
+### Lab 2: Group Practice
+1. Create group `training`
+2. Add student1 to training
+3. Verify group membership
 
-### Lab 2: Sudo Practice
-1. Create user `ops1`
-2. Give sudo access for `systemctl` only
-3. Test restarting nginx
-
----
-
-## 🎯 Interview Practice Questions
-
-### Conceptual
-1. Difference between `su` and `sudo`?
-2. What is stored in `/etc/passwd` vs `/etc/shadow`?
-3. What happens if home directory is deleted but user exists?
-
-### Scenario-Based
-1. User cannot run sudo – how to troubleshoot?
-2. Create a user who can restart nginx but nothing else.
-3. Migrate a user’s home directory to new disk.
+### Lab 3: Switch User
+1. Login as student1
+2. Create a file in home directory
 
 ---
 
-## 📌 Quick Revision Cheat Sheet
+## ⚠️ 16️⃣ Common Mistakes
 
-| Task | Command |
-|-----|--------|
-| Create user | `useradd -m user1` |
-| Set password | `passwd user1` |
-| Add to group | `usermod -aG docker user1` |
-| Delete user | `userdel -r user1` |
-| Switch user | `su - user1` |
-| Run as root | `sudo command` |
+- Forgetting `-a` while adding group (removes old groups)
+- Deleting user without backup
+- Giving sudo to everyone
+- Editing system files manually
 
 ---
 
+## 📝 17️⃣ Practice Questions
 
+### Basic
+1. What is a user?
+2. What is UID?
+3. Difference between root and normal user?
+
+### Hands-on
+1. Create a user `test1` with home directory.
+2. Add test1 to group `qa`.
+3. Lock the user account.
+
+---
+
+## 🎯 18️⃣ Interview & Scenario Questions
+
+1. A user cannot login. How will you check?
+2. How do you give sudo access to a user?
+3. Difference between `su` and `sudo`?
+4. Where are passwords stored in Linux?
+
+---
+
+## 📌 19️⃣ Quick Revision Summary
+
+| Topic | Command |
+|------|--------|
+| Create user | useradd |
+| Delete user | userdel |
+| Set password | passwd |
+| Create group | groupadd |
+| Add to group | usermod -aG |
+| Switch user | su |
+| Run as root | sudo |
+
+---
 
