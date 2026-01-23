@@ -1,4 +1,4 @@
-[01_users_and_groups_readme.md](https://github.com/user-attachments/files/24819111/01_users_and_groups_readme.md)
+
 # 👤 Users & Groups in Linux 
 
 ## 1️⃣ Introduction to Users in Linux
