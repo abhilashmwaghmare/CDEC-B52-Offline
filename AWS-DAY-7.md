@@ -1,9 +1,4 @@
 # 💾 AWS EBS Advanced --- Partitions, Permanent Mount & Snapshot Automation
-
-> 📘 DevOps Practical Guide (GitHub README Ready)\
-> Covers Linux Partitions, Permanent Mount using fstab, EBS Snapshots,
-> and Automated Snapshot Policies.
-
 ------------------------------------------------------------------------
 
 # 📑 Table of Contents
@@ -256,24 +251,3 @@ Benefits:
 
 ------------------------------------------------------------------------
 
-# 📁 Suggested GitHub Repo Structure
-
-    aws-ebs-advanced/
-    │
-    ├── README.md
-    └── images/
-        ├── linux-partition-diagram.png
-        ├── linux-fstab-mount.png
-        ├── aws-ebs-snapshot.png
-        └── aws-snapshot-policy.png
-
-------------------------------------------------------------------------
-
-# ⭐ DevOps Trainer Notes
-
-This README follows real DevOps repo design:
-
--   Practical Linux implementation
--   AWS architecture diagrams
--   Automation-focused learning
--   Interview-ready explanations
