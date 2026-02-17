@@ -1,9 +1,4 @@
 # 🔐 SSH Authentication, User Management & NGINX Deployment --- DevOps Practical Guide
-
-> 📘 GitHub Ready README\
-> Covers SSH Key-Based Authentication, Creating Linux Users, and
-> Deploying NGINX Web Server on EC2.
-
 ------------------------------------------------------------------------
 
 # 📑 Table of Contents
@@ -249,23 +244,4 @@ Save and refresh browser.
 
 ------------------------------------------------------------------------
 
-# 📁 Suggested GitHub Repo Structure
 
-    aws-devops-training/
-    │
-    ├── README.md
-    └── images/
-        ├── ssh-key-authentication.png
-        ├── linux-user-management.png
-        └── nginx-deployment.png
-
-------------------------------------------------------------------------
-
-# ⭐ DevOps Trainer Notes
-
-This README follows real DevOps repository design:
-
--   Clean markdown structure
--   Practical commands
--   Real-world architecture layout
--   Beginner + Interview ready
