@@ -1,9 +1,4 @@
 # 🚀 AWS EC2 Deep Dive --- Dashboard, Instance Types, AMI, Status Checks & Launch Templates
-
-> 📘 DevOps Training README (GitHub Ready)\
-> Covers complete EC2 Dashboard, Instance Types, Status Checks, AMI
-> concepts, Launch Templates, and Purchasing Options.
-
 ------------------------------------------------------------------------
 
 # 📑 Table of Contents
@@ -305,31 +300,4 @@ Benefits:
 
 ------------------------------------------------------------------------
 
-# 📁 Suggested GitHub Repo Structure
 
-    aws-ec2-training/
-    │
-    ├── README.md
-    └── images/
-        ├── ec2-dashboard-overview.png
-        ├── ec2-instance-types.png
-        ├── ec2-status-checks.png
-        ├── ec2-launch-template.png
-        └── ec2-purchasing-options.png
-
-------------------------------------------------------------------------
-
-# ⭐ DevOps Trainer Notes
-
-This README follows real DevOps repo design:
-
--   Clean markdown layout
--   Architecture diagrams
--   Practical explanations
--   Interview-focused content
-
-Perfect for:
-
-✔ DevOps training batches\
-✔ AWS EC2 deep-dive sessions\
-✔ GitHub portfolio projects
