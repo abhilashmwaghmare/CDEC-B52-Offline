@@ -1,9 +1,4 @@
 # 🚀 DevOps Cloud Fundamentals — Detailed Training Module
-Beginner → Intermediate Level | DevOps + Cloud Foundation | GitHub README Ready
-
-This document explains **Virtualization, Cloud Computing, Cloud Service Models, and AWS Account Creation** in a **deep, structured, real-world DevOps context**.  
-Designed for students, trainers, and interview preparation.
-
 ---
 
 # 📘 1️⃣ Introduction to Virtualization
