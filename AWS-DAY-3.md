@@ -1,9 +1,4 @@
 # 🔐 AWS Security Groups, Windows EC2 & Remote Access Guide
-
-> DevOps Training README --- GitHub Ready\
-> Covers Security Groups (SSH/RDP), Windows Instance Creation, and
-> Remote Access for Linux & Windows.
-
 ------------------------------------------------------------------------
 
 # 📑 Table of Contents
@@ -237,26 +232,7 @@ Default Username:
 
 ------------------------------------------------------------------------
 
-# 📁 Suggested GitHub Repo Structure
 
-    aws-devops-training/
-    │
-    ├── README.md
-    └── images/
-        ├── aws-security-group-diagram.png
-        ├── aws-windows-ec2-launch.png
-        └── aws-remote-access-diagram.png
-
-------------------------------------------------------------------------
-
-# ⭐ DevOps Trainer Notes
-
-This README follows real DevOps repository design:
-
--   Clean architecture layout
--   Practical commands
--   Visual diagram placeholders
--   Interview preparation section
 
 Perfect for:
 
