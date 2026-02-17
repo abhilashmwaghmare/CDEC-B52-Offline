@@ -317,6 +317,95 @@ Enable inbound rules:
 ## 🔹 Step 7 — Configure Storage
 
 Default:
+8 GB gp3 volume
 
+
+Benefits of gp3:
+
+- Better performance
+- Adjustable IOPS
+
+---
+
+## 🔹 Step 8 — Launch Instance
+
+Click **Launch Instance**.
+
+Wait until:
+
+Running
+2/2 Status Checks Passed
+
+
+---
+
+## 🔹 Step 9 — Connect to Ubuntu Server
+
+```bash
+chmod 400 ubuntu-key.pem
+ssh -i ubuntu-key.pem ubuntu@<Public-IP>
+
+
+What is AWS Dashboard? → Web interface for AWS services.
+
+Define Region. → Geographic AWS location.
+
+Define Availability Zone. → Isolated datacenter.
+
+What is EC2? → Virtual server in cloud.
+
+What is AMI? → OS template.
+
+Default Ubuntu user? → ubuntu.
+
+Security Group? → Instance firewall.
+
+Free tier instance? → t2.micro.
+
+SSH port? → 22.
+
+Why multiple AZs? → High availability.
+
+EC2 belongs to? → IaaS.
+
+Public IP? → Internet-accessible address.
+
+Key Pair purpose? → Secure login.
+
+Region selection reason? → Lower latency.
+
+Status check meaning? → Instance health verification.
+
+Region vs AZ difference? → Location vs datacenter.
+
+Why Multi-AZ deployment? → Fault tolerance.
+
+Role of AMI? → Standardization.
+
+Open SSH risk? → Unauthorized access.
+
+Scaling EC2? → Auto Scaling Groups.
+
+gp3 advantage? → Performance control.
+
+Why avoid root login? → Security risk.
+
+Elastic IP use case? → Static IP.
+
+Public vs Private subnet? → Internet vs internal.
+
+DevOps use of EC2? → CI/CD hosting.
+
+🚀 Scenario-Based (5)
+
+AZ failure occurs — solution? → Multi-AZ architecture.
+
+Need reusable server template? → Create AMI.
+
+SSH access restricted? → Limit security group IPs.
+
+Startup deploys web app quickly? → Launch Ubuntu EC2.
+
+Reusable infrastructure setup? → Launch Template.
 
 
