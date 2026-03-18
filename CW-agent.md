@@ -1,11 +1,13 @@
-## Install CloudWatch Agent
- apt install amazon-cloudwatch-agent -y
+## step 1
+sudo apt install -y curl unzip  
+## step 2
+curl -O https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
+## step 3
+sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
+## step 4
+vim cwagent-config.json
 
- ## Create CloudWatch Agent Config
-
- vim /opt/aws/amazon-cloudwatch-agent/bin/config.json
-
- {
+{
   "metrics": {
     "namespace": "Custom/EC2",
     "metrics_collected": {
@@ -37,23 +39,10 @@
   }
 }
 
+
 ## Attach IAM Role
 
 EC2 → IAM Role → Attach policy:
 
 CloudWatchAgentServerPolicy
-
-## Start CloudWatch Agent
-
-sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
--a fetch-config \
--m ec2 \
--c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json \
--s
-
-
-## to Verify the service  stopped/running
-
-sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status
-
-## Verify in AWS Console
+admin access
